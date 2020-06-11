@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1
   def show
-    render json: @restaurant
+    render json: @restaurant, include: :reviews
   end
 
   # POST /restaurants
@@ -36,6 +36,14 @@ class RestaurantsController < ApplicationController
   # DELETE /restaurants/1
   def destroy
     @restaurant.destroy
+  end
+
+  def new_review
+    @review = Review.find(params[:review_id])
+    @restaurant = Restaurant.find(params[:id])
+
+    @restaurant.reviews << @review
+    render json: @restaurant, include: :reviews
   end
 
   private

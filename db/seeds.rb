@@ -5,11 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Restaurant.destroy_all
 Review.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 
 @user = User.create!(username: 'clairecodes', email: 'claire@claire.com', password: '123456')
+
+@restaurant = Restaurant.create!(user: @user, name: 'Ugly Baby', imgURL: 'https://media.timeout.com/images/105556144/380/285/image.jpg', location: 'Carroll Gardens', description: 'Tucked away on a quiet stretch of Smith Street in Carroll Gardens is a Thai restaurant that will keep you coming back for more self-inflicted pain. Whether you’re ordering the “stay-away spicy Udon Thani’s duck salad” or the khao soi, the servers will warn you over and over to be careful of the spice. You’ll go against their advice and end up begging for more of the cooling cucumbers to ward off the heat.')
 
 @restaurant = Restaurant.create!(user: @user, name: 'Ugly Baby', imgURL: 'https://media.timeout.com/images/105556144/380/285/image.jpg', location: 'Carroll Gardens', description: 'Tucked away on a quiet stretch of Smith Street in Carroll Gardens is a Thai restaurant that will keep you coming back for more self-inflicted pain. Whether you’re ordering the “stay-away spicy Udon Thani’s duck salad” or the khao soi, the servers will warn you over and over to be careful of the spice. You’ll go against their advice and end up begging for more of the cooling cucumbers to ward off the heat.')
 
