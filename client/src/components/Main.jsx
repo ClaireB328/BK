@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import {Route} from 'react-router-dom'
 import Login from './Login'
+import Register from './Register'
 
 export default class Main extends Component {
     render() {
         return (
             <main>
                 <Route path='/user/login' render={()=>(
-                    <Login />
+                    <Login 
+                    handleLoginSubmit={this.props.handleLoginSubmit}
+                    />
                 )}/>
                 <Route path='/user/register' render={()=>(
-                    <h2>Register</h2>
+                    <Register
+                    handleRegisterSubmit={this.props.handleRegisterSubmit}
+                    
+                    />
                 )}/>
             </main>
         )

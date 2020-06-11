@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Login extends Component {
     state = {
@@ -14,13 +15,16 @@ export default class Login extends Component {
 
     }
 
-
     render() {
         const { username, password } = this.state;
+        const { handleLoginSubmit } = this.props;
         return (
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                handleLoginSubmit(this.state)
+            }}>
                 <h3>LOG IN</h3>
-                <label htmlFor="username">username:</label>
+                <label htmlFor="username">username:
               <input 
               id="username"
               type="text" 
@@ -28,8 +32,9 @@ export default class Login extends Component {
               value={username} 
               onChange={this.handleChange} 
             />  
+            </label>
             <br />
-            <label htmlFor="password">password:</label>
+            <label htmlFor="password">password:
             <input
               id="password"
               type="password" 
@@ -37,7 +42,10 @@ export default class Login extends Component {
               value={password} 
               onChange={this.handleChange} 
             />  
+            </label>
             <br />
+            <Link to='/user/register'>Register</Link>
+            <button>Submit</button>
             </form>
         )
     }
