@@ -18,11 +18,18 @@ export default class Register extends Component {
 
     render() {
         const { username, email, password } = this.state;
-        const { handleRegisterSubmit } = this.props;
+        const { handleRegisterSubmit, history } = this.props;
         return (
             <form onSubmit={(e) => {
                 e.preventDefault();
-                handleRegisterSubmit(this.state)
+                handleRegisterSubmit(this.state);
+                history.push('/');
+                this.setState({
+                    username: "",
+                    email: "",
+                    password: ""
+                })
+
             }}>
                 <h3>Register</h3>
                 <label htmlFor="username">username:

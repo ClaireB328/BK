@@ -1,6 +1,6 @@
 import api from './api-helper';
 
-export const getReviews = async () => {
+export const getAllReviews = async () => {
     const resp = await api.get('/reviews')
     return resp.data;
 }

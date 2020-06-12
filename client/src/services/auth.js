@@ -24,3 +24,6 @@ export const loginUser = async (loginData) => {
     return false
   }
   
+  export const removeToken = () => {
+    api.defaults.headers.common.authorization = null;
+  }

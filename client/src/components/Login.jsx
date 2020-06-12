@@ -17,13 +17,19 @@ export default class Login extends Component {
 
     render() {
         const { username, password } = this.state;
-        const { handleLoginSubmit } = this.props;
+        const { handleLoginSubmit, history } = this.props;
         return (
             <form onSubmit={(e) => {
                 e.preventDefault();
-                handleLoginSubmit(this.state)
+                handleLoginSubmit(this.state);
+                history.push('/');
+                this.setState({
+                    username: "",
+                    password: ""
+                })
+
             }}>
-                <h3>LOG IN</h3>
+                <h3>LOGIN</h3>
                 <label htmlFor="username">username:
               <input 
               id="username"
@@ -44,7 +50,7 @@ export default class Login extends Component {
             />  
             </label>
             <br />
-            <Link to='/user/register'>Register</Link>
+            {/* <Link to='/user/register'>Register</Link> */}
             <button>Submit</button>
             </form>
         )
