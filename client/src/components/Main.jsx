@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import {Route} from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
-import { getAllReviews } from '../services/reviews'
-import { getAllRestaurants, createRestaurant, deleteRestaurant } from '../services/restaurants'
+import { getAllReviews, createReview } from '../services/reviews'
+import { getAllRestaurants, createRestaurant, deleteRestaurant, updateRestaurant } from '../services/restaurants'
 import ShowReviews from './ShowReviews'
 import ShowRestaurants from './ShowRestaurants'
 import CreateRestaurant from './CreateRestaurant'
 import Restaurant from './Restaurant'
+import CreateReview from './CreateReview'
+import EditRestaurant from './EditRestaurant'
 
 export default class Main extends Component {
 state = {
@@ -24,6 +26,11 @@ getReviews = async () => {
     const reviews = await getAllReviews();
     this.setState({ reviews });
 
+// createReview = async (reviewData) => {
+//     const newReview = await createReview(reviewData);
+//     this.setState({ reviews });
+// }
+
 // ========= RESTAURANTS =========
 }
 getRestaurants = async () => {
@@ -34,9 +41,20 @@ getRestaurants = async () => {
 postRestaurant = async (restaurantData) => {
     const newRestaurant = await createRestaurant(restaurantData);
     this.setState(prevState => ({
-        restaurants: [...prevState.items, newRestaurant]
+        restaurants: [...prevState.restaurants, newRestaurant]
       }))
 }
+
+  // Our putFood method should follow a similar pattern that we're used to.
+  // improt notes: we need an id and formData for our api call
+  // For the setState, I referenced the frontend-CRUD-design lesson
+  putRestaurant = async (id, restaurantData) => {
+    const updatedRestaurant = await updateRestaurant(id, restaurantData);
+    this.setState(prevState => ({
+      restaurants: prevState.restaurants.map(restaurant => restaurant.id === id ? updatedRestaurant : restaurant)
+    }))
+  }
+
 
 destroyRestaurant = async (id) => {
     await deleteRestaurant(id);
@@ -68,7 +86,7 @@ destroyRestaurant = async (id) => {
                     reviews={this.state.reviews}
                     />
                 )} />
-                <Route path='/restaurants' render={() => (
+                <Route exact path='/' render={() => (
                     <ShowRestaurants
                     restaurants={this.state.restaurants}
                     currentUser={this.props.currentUser}
@@ -82,9 +100,34 @@ destroyRestaurant = async (id) => {
                     />
                 )} />
 
-                {/* <Route path='/restaurants/${id}' render={() => (
-                    <Restaurant />
-                )} /> */}
+                <Route path='/restaurants/:id' render={(props) => {
+                   const restaurantId = props.match.params.id 
+                   const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId))
+                   return <Restaurant 
+                   restaurant={restaurant}/>  
+                }} />
+
+                {/* <Route path='/restaurants/:id' render={(props) => {
+                    <CreateReview
+                    {...props}
+                    createReview={this.postReview}
+                    />
+                }} /> */}
+
+                <Route path='/restaurants/:id' render={(props) => {
+                // instead of implicitly returning right away,
+                // we are going to first grab the id of the food we want to update.
+                // Then we are using the .find method to pull that food object
+                // from our foods array in state. We can pass the whole food obj
+                // to our UpdateFood component through props.
+                const restaurantId = props.match.params.id;
+                const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId));
+                return <EditRestaurant
+                 {...props}
+                 restaurant={restaurant}
+                 putRestaurant={this.putRestaurant}
+                 />
+                  }} />
 
                 
             </main>

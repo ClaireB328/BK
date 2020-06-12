@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function Header(props) {
     return (
         <div>
-            <Link to='/home/'>
+            <Link to='/'>
             <h1>Brooklyn Restaurateur Review</h1>
             </Link>
             {

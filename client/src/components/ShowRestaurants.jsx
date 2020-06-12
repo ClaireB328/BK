@@ -12,19 +12,19 @@ export default function ShowRestaurants(props) {
                     <React.Fragment key={restaurant.id}>
 
                     <p> {restaurant.id} 
-                        {restaurant.name} 
+                        <Link to={`/restaurants/${restaurant.id}`}>{restaurant.name}</Link>
                         {restaurant.location} 
                         {restaurant.imgURL}  
                         {restaurant.description}
                     </p>
-                    {
+                    {/* {
                         currentUser && currentUser.id === restaurant.user_id && (
                             <>
                             <button>Edit</button>
                             <button onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
                             </>
                         )
-                    }
+                    } */}
                     </React.Fragment>
                     
                 ))
