@@ -10,16 +10,16 @@ export default function Restaurant(props) {
                 <>
                     <h3>ONE RESTAURANT</h3>
                     <React.Fragment> 
-                    <Link to ={`/restaurants/${restaurant.id}`} >
+                    <p>
                         {restaurant.name}
                         {restaurant.location}
                         {restaurant.imgURL}
                         {restaurant.description}
-                    </Link>
+                    </p>
                     {
                         currentUser && currentUser.id === restaurant.user_id && (
                             <>
-                            <button onClick={() => history.push(`/restaurant/${restaurant.id}/edit}`)}>Edit</button>
+                            <button onClick={() => history.push(`/restaurant/${restaurant.id}`)}>Edit</button>
                             <button onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>            
                             </>
                         )

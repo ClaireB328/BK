@@ -50,7 +50,7 @@ export default class EditRestaurant extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         putRestaurant(restaurant.id, this.state);
-        history.push('/restaurants/.id');
+        history.push('/restaurants/.id/edit');
         this.setState({
           name: "",
           location: "",

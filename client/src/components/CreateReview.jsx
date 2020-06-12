@@ -19,7 +19,7 @@ export default class CreateReview extends Component {
             <form onSubmit={(e) => {
                 e.preventDefault();
                 postReview(this.state);
-                history.push('/restaurants/:id');
+                history.push('/reviews');
                 this.setState({
                     text: "",
                   

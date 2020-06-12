@@ -26,10 +26,10 @@ getReviews = async () => {
     const reviews = await getAllReviews();
     this.setState({ reviews });
 
-// createReview = async (reviewData) => {
-//     const newReview = await createReview(reviewData);
-//     this.setState({ reviews });
-// }
+postReview = async (reviewData) => {
+    const leaveReview = await createReview(reviewData);
+    this.setState({ reviews });
+}
 
 // ========= RESTAURANTS =========
 }
@@ -81,18 +81,12 @@ destroyRestaurant = async (id) => {
                     />
                 )}/>
 
-                <Route path='/reviews' render={() => (
-                    <ShowReviews
-                    reviews={this.state.reviews}
-                    />
-                )} />
                 <Route exact path='/' render={() => (
                     <ShowRestaurants
                     restaurants={this.state.restaurants}
-                    currentUser={this.props.currentUser}
-                    destroyRestaurant={this.destroyRestaurant}
                     />
                 )} />
+
                 <Route path='/new/restaurant' render={(props) => (
                     <CreateRestaurant
                     {...props}
@@ -104,30 +98,40 @@ destroyRestaurant = async (id) => {
                    const restaurantId = props.match.params.id 
                    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId))
                    return <Restaurant 
-                   restaurant={restaurant}/>  
+                   restaurant={restaurant}
+                   currentUser={this.props.currentUser}
+                   destroyRestaurant={this.destroyRestaurant}
+                   />  
                 }} />
 
-                {/* <Route path='/restaurants/:id' render={(props) => {
-                    <CreateReview
-                    {...props}
-                    createReview={this.postReview}
-                    />
-                }} /> */}
 
                 <Route path='/restaurants/:id' render={(props) => {
-                // instead of implicitly returning right away,
-                // we are going to first grab the id of the food we want to update.
-                // Then we are using the .find method to pull that food object
-                // from our foods array in state. We can pass the whole food obj
-                // to our UpdateFood component through props.
-                const restaurantId = props.match.params.id;
-                const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId));
-                return <EditRestaurant
-                 {...props}
-                 restaurant={restaurant}
-                 putRestaurant={this.putRestaurant}
-                 />
-                  }} />
+                    // instead of implicitly returning right away,
+                    // we are going to first grab the id of the food we want to update.
+                    // Then we are using the .find method to pull that food object
+                    // from our foods array in state. We can pass the whole food obj
+                    // to our UpdateFood component through props.
+                    const restaurantId = props.match.params.id;
+                    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId));
+                    return <EditRestaurant
+                    {...props}
+                    restaurant={restaurant}
+                    putRestaurant={this.putRestaurant}
+                    />
+                }} />
+
+                <Route path='/reviews' render={() => (
+                    <ShowReviews
+                    reviews={this.state.reviews}
+                    />
+                 )} />
+                                                    
+                <Route path='/restaurants/:id/reviews' render={(props) => (
+                    <CreateReview
+                    {...props}
+                    postReview={this.postReview}
+                    />
+                )} />
 
                 
             </main>
@@ -136,4 +140,3 @@ destroyRestaurant = async (id) => {
 }
 
 
-// do not want CRUD on main page with all restaurants. want CRUD/reviews on selected restaurant. doing it this way for testing
