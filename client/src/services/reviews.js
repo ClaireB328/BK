@@ -1,17 +1,9 @@
 import api from './api-helper';
 
-export const getAllReviews = async () => {
-    const resp = await api.get('/reviews')
-    return resp.data;
-}
 
-export const getOneReview = async (id) => {
-    const resp = await api.get(`/reviews/${id}`);
-    return resp.data
-}
 
-export const createReview = async (reviewData) => {
-    const resp = await api.post('/reviews', { review: reviewData });
+export const createReview = async (reviewData, restaurant_id) => {
+    const resp = await api.post(`/restaurants/${restaurant_id}/reviews`, { review: reviewData });
     return resp.data
 }
 

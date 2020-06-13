@@ -21,7 +21,7 @@ class RestaurantsController < ApplicationController
     @restaurant.user = @current_user
 
     if @restaurant.save
-      render json: @restaurant, status: :created
+      render json: @restaurant, include: { reviews: { include: { user: { only: :name }}}}, status: :created
     else
       render json: @restaurant.errors, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   def update
     if @restaurant.update(restaurant_params)
-      render json: @restaurant
+      render json: @restaurant, include: { reviews: { include: { user: { only: :name }}}}
     else
       render json: @restaurant.errors, status: :unprocessable_entity
     end

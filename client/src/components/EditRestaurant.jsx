@@ -32,8 +32,8 @@ export default class EditRestaurant extends Component {
 
   // setFoodForm just grabs the food passed from props and sets state
   setRestaurantForm = () => {
-    const { name } = this.props.restaurant
-    this.setState({ name })
+    const { name, location, description } = this.props.restaurant
+    this.setState({ name, location, description })
   }
 
   handleChange = (e) => {
@@ -45,12 +45,12 @@ export default class EditRestaurant extends Component {
 
   render() {
     const { name, location, imgURL, description } = this.state;
-    const { putRestaurant, history, restaurant } = this.props;
+    const { putRestaurant, restaurant } = this.props;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
         putRestaurant(restaurant.id, this.state);
-        history.push('/restaurants/.id/edit');
+        this.props.resetEdit();
         this.setState({
           name: "",
           location: "",

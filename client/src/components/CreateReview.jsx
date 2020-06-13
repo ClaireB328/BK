@@ -6,20 +6,19 @@ export default class CreateReview extends Component {
     }
 
     handleChange= (e) => {
-        const { text, value } = e.target;
+        const { name, value } = e.target;
         this.setState({
-            [text]: value
+            [name]: value
         })
     }
 
     render() {
         const { text } = this.state;
-        const { postReview, history } = this.props
+        const { postReview, restaurantId } = this.props
         return (
             <form onSubmit={(e) => {
                 e.preventDefault();
-                postReview(this.state);
-                history.push('/reviews');
+                postReview(this.state, restaurantId);
                 this.setState({
                     text: "",
                   
@@ -30,13 +29,12 @@ export default class CreateReview extends Component {
                 <input 
                 id="text"
                 type="text" 
-                name="Review"
+                name="text"
                 value={text}
                 onChange={this.handleChange}
              /> 
             </label>
-            <br />
-                
+
                 <button>Submit</button>
             </form>
         )

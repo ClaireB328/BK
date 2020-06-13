@@ -13,26 +13,23 @@ import EditRestaurant from './EditRestaurant'
 
 export default class Main extends Component {
 state = {
-    reviews: "",
     restaurants: []
 }
 
 componentDidMount(){
-    this.getReviews();
     this.getRestaurants();
 }
 // ========== REVIEWS ===========
-getReviews = async () => {
-    const reviews = await getAllReviews();
-    this.setState({ reviews });
 
-postReview = async (reviewData) => {
-    const leaveReview = await createReview(reviewData);
-    this.setState({ reviews });
+postReview = async (reviewData, restaurant_id) => {
+    const updatedRestaurant = await createReview(reviewData, restaurant_id);
+    this.setState(prevState => ({
+        restaurants: prevState.restaurants.map(restaurant => restaurant.id === restaurant_id ? updatedRestaurant : restaurant)
+      }))
 }
 
 // ========= RESTAURANTS =========
-}
+
 getRestaurants = async () => {
     const restaurants = await getAllRestaurants();
     this.setState({ restaurants });
@@ -98,41 +95,19 @@ destroyRestaurant = async (id) => {
                    const restaurantId = props.match.params.id 
                    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId))
                    return <Restaurant 
+                   {...props}
                    restaurant={restaurant}
                    currentUser={this.props.currentUser}
                    destroyRestaurant={this.destroyRestaurant}
+                   putRestaurant={this.putRestaurant}
+                   postReview={this.postReview}
                    />  
+
                 }} />
 
 
-                <Route path='/restaurants/:id' render={(props) => {
-                    // instead of implicitly returning right away,
-                    // we are going to first grab the id of the food we want to update.
-                    // Then we are using the .find method to pull that food object
-                    // from our foods array in state. We can pass the whole food obj
-                    // to our UpdateFood component through props.
-                    const restaurantId = props.match.params.id;
-                    const restaurant = this.state.restaurants.find(restaurant => restaurant.id === parseInt(restaurantId));
-                    return <EditRestaurant
-                    {...props}
-                    restaurant={restaurant}
-                    putRestaurant={this.putRestaurant}
-                    />
-                }} />
 
-                <Route path='/reviews' render={() => (
-                    <ShowReviews
-                    reviews={this.state.reviews}
-                    />
-                 )} />
-                                                    
-                <Route path='/restaurants/:id/reviews' render={(props) => (
-                    <CreateReview
-                    {...props}
-                    postReview={this.postReview}
-                    />
-                )} />
-
+                
                 
             </main>
         )

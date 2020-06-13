@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :reviews
-  resources :restaurants
+  resources :restaurants do 
+  resources :reviews
+  end
+
+
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
 
