@@ -25,7 +25,7 @@ export default class Restaurant extends Component {
                             <p>
                                 {restaurant.name}
                                 {restaurant.location}
-                                {restaurant.imgURL}
+                                <img className="single-image" src={restaurant.imgURL} /> 
                                 {restaurant.description}
                             </p>
                             {
