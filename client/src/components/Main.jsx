@@ -102,12 +102,8 @@ destroyRestaurant = async (id) => {
                    putRestaurant={this.putRestaurant}
                    postReview={this.postReview}
                    />  
-
                 }} />
-
-
-
-                
+  
                 
             </main>
         )

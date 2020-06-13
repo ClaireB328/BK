@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Main from './components/Main'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
+import Footer from './components/Footer'
 
 
 export default class App extends Component {
@@ -50,6 +51,7 @@ export default class App extends Component {
          currentUser={this.state.currentUser}
         
          />
+         <Footer />
       </div>
     )
   }
