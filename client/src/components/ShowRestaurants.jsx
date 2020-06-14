@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import './ShowRestaurants.css'
 
 export default function ShowRestaurants(props) {
     const { restaurants } = props;
@@ -11,13 +12,15 @@ export default function ShowRestaurants(props) {
                 restaurants.map(restaurant => (
                     <React.Fragment key={restaurant.id}>
 
-                    <p> 
-                        {restaurant.id} 
-                        <Link to={`/restaurants/${restaurant.id}`}>{restaurant.name}</Link>
-                        {restaurant.location} 
+                    <div className="all-restaurants"> 
+                        {/* {restaurant.id}  */}
+                        <Link className="restaurants" to={`/restaurants/${restaurant.id}`}>
+                        <div className="rest-name">{restaurant.name}</div>
+                        <div className="rest-loc">{restaurant.location} </div>
                         <img className="restaurant-image" src={restaurant.imgURL} /> 
-                        {restaurant.description}
-                    </p>
+                        </Link>
+                        {/* <div className="rest-description">{restaurant.description}</div> */}
+                    </div>
                     </React.Fragment>
                     
                 ))

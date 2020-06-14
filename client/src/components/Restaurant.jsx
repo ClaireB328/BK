@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import EditRestaurant from './EditRestaurant'
 import ShowReviews from './ShowReviews'
 import CreateReview from './CreateReview'
+import './Restaurant.css'
 
 export default class Restaurant extends Component {
     state = {
@@ -17,17 +18,16 @@ export default class Restaurant extends Component {
         const { restaurant, currentUser, destroyRestaurant } = this.props
         return (
             <>
-                <hr />
                 {restaurant &&
                     <>
-                        <h3>ONE RESTAURANT</h3>
+
                         <React.Fragment>
-                            <p>
+                            <div className="one-rest">
                                 {restaurant.name}
                                 {restaurant.location}
                                 <img className="single-image" src={restaurant.imgURL} /> 
                                 {restaurant.description}
-                            </p>
+                            </div>
                             {
                                 currentUser && currentUser.id === restaurant.user_id && (
                                     <>

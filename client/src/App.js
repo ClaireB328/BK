@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import './components/Footer.css'
 
 
+
 export default class App extends Component {
   state = {
     currentUser: null

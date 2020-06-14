@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import './Header.css'
 
 export default function Header(props) {
     return (
-        <div>
+        <nav>
             <Link to='/'>
             <h1>Brooklyn Restaurateur Review</h1>
             </Link>
@@ -12,11 +13,11 @@ export default function Header(props) {
             ? 
             <>{props.currentUser.username}<button onClick={props.handleLogout}>Logout</button></> 
             : 
-            <Link to='/user/login'>Login</Link>
+            <Link className="login" to='/user/login'><button>Login</button></Link>
             }
 
-            <Link to='/user/register'>Register</Link>
+            <Link className="register" to='/user/register'><button>Register</button></Link>
             <hr />
-        </div>
+        </nav>
     )
 }
