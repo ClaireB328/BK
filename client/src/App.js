@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
 import Footer from './components/Footer'
+import './components/Footer.css'
 
 
 export default class App extends Component {

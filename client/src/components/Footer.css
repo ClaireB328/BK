@@ -1,0 +1,11 @@
+
+  footer {
+    background-color: #405876;
+    height: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
