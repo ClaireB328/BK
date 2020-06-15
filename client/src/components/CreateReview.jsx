@@ -36,7 +36,7 @@ export default class CreateReview extends Component {
              /> 
             </label>
 
-                <button>Submit</button>
+                <button className="review-submit">Submit</button>
             </form>
         )
     }

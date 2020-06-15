@@ -32,7 +32,7 @@ export default class Register extends Component {
                 })
 
             }}>
-                <h3>Register</h3>
+                <h3 className="register-form-title">Register</h3>
                 <label htmlFor="username">username:
               <input className="reg-username"
               id="username"
@@ -64,7 +64,7 @@ export default class Register extends Component {
             />  
             </label>
             <br />
-            <button>Submit</button>
+            <button className="register-submit">Submit</button>
             </form>
         )
     }

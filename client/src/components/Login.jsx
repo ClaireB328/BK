@@ -31,7 +31,7 @@ export default class Login extends Component {
                 })
 
             }}>
-                <h3>LOGIN</h3>
+                <h3 className="login-form-title">Login</h3>
                 <label htmlFor="username">username:
               <input className="login-input"
               id="username"
@@ -53,7 +53,7 @@ export default class Login extends Component {
             </label>
             <br />
             {/* <Link to='/user/register'>Register</Link> */}
-            <button>Submit</button>
+            <button className="login-submit">Submit</button>
             </form>
         )
     }
