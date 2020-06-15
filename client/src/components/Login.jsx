@@ -33,7 +33,7 @@ export default class Login extends Component {
             }}>
                 <h3>LOGIN</h3>
                 <label htmlFor="username">username:
-              <input 
+              <input className="login-input"
               id="username"
               type="text" 
               name="username" 
@@ -43,7 +43,7 @@ export default class Login extends Component {
             </label>
             <br />
             <label htmlFor="password">password:
-            <input
+            <input className="password-input"
               id="password"
               type="password" 
               name="password" 

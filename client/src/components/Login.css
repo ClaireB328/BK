@@ -6,14 +6,19 @@
   grid-gap: 10px;
 }
 
-.login-form label {
+/* .login-form label {
   justify-self: end;
-}
+} */
 
 
-.login-form p {
+.login-input  {
 
   margin: 0;
   padding-top: 7px;
   justify-self: end;
 }
+
+/* .password-input {
+
+
+} */
