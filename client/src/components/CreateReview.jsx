@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CreateReview.css'
 
 export default class CreateReview extends Component {
     state={
@@ -16,7 +17,7 @@ export default class CreateReview extends Component {
         const { text } = this.state;
         const { postReview, restaurantId } = this.props
         return (
-            <form onSubmit={(e) => {
+            <form className="create-review-form" onSubmit={(e) => {
                 e.preventDefault();
                 postReview(this.state, restaurantId);
                 this.setState({
@@ -25,7 +26,7 @@ export default class CreateReview extends Component {
                 })
             }}>
                 <h3>Leave your review here...</h3>
-                <label htmlFor="text">Review:
+                <label htmlFor="text">
                 <input className="review-input"
                 id="text"
                 type="text" 
