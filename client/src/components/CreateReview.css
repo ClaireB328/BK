@@ -1,7 +1,6 @@
 .create-review-form {
   margin: 10px auto;
-  width: 19em;
-  text-align: center;
+  width: 20em;
   position: relative;
   -webkit-animation: moveDown .3s;
   -moz-animation: moveDown .3s;
@@ -9,8 +8,8 @@
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  padding-bottom: 70px;  
 }
-
 
 .review-input{
   color: #444;
@@ -36,4 +35,5 @@
   -moz-transition: border .25s;
   -o-transition: border .25s;
   transition: border .25s;
+ 
 }

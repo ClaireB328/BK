@@ -1,9 +1,10 @@
 import React from 'react'
+import './ShowReviews.css'
 
 export default function ShowReviews(props) {
     const {reviews} = props;
     return (
-        <div>
+        <div className="submitted-reviews">
             <h3>Reviews</h3>
             {
                 reviews.map(review => (

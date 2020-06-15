@@ -24,17 +24,21 @@ export default class Restaurant extends Component {
                     <>
 
                         <React.Fragment>
+
+
                             <div className="one-rest">
-                                {restaurant.name}
-                                {restaurant.location}
+                                <h1 className="one-rest-name">{restaurant.name}</h1>
+                            
+                                <h2 className="one-rest-location">{restaurant.location}</h2>
                                 <img className="single-image" src={restaurant.imgURL} /> 
-                                {restaurant.description}
+                                <h3 className="one-rest-description">{restaurant.description}</h3>
                             </div>
+
                             {
                                 currentUser && currentUser.id === restaurant.user_id && (
                                     <>
-                                        <button onClick={() => this.setState({ isEdit: true })}>Edit</button>
-                                        <button onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
+                                        <button className="rest-edit-button" onClick={() => this.setState({ isEdit: true })}>Edit</button>
+                                        <button className="rest-delete-button" onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
                                         {/* <button onClick={() => this.setState({ isReview: true})}>Review</button> */}
                                     </>
                                 )
@@ -47,12 +51,12 @@ export default class Restaurant extends Component {
                             />
 
                         }
-                        <ShowReviews 
-                        reviews = {restaurant.reviews}
-                        />
                         <CreateReview 
                         {...this.props}
                         restaurantId = {restaurant.id} 
+                        />
+                        <ShowReviews 
+                        reviews = {restaurant.reviews}
                         />
                     </>
                 }

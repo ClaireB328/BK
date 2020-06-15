@@ -1,29 +1,38 @@
-nav {
-  width: 100%;
-  text-align: center;
-  background-color: red;
+.header {
   display: flex;
   justify-content: center;
-  height: 80px;
-  padding-bottom: 20px;
+  background-color: #e63946;
+  
+}
 
+a h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 3px;
+  flex: 1;
+  max-width: 40vw;
+  color: white;
+}
+
+
+.nav {
+  width: 100%;
+  text-align: center;
+  background-color: #e63946;
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+  padding-bottom: 5px;
+  
 }
 
 a {
   text-decoration: none;
 }
 
-a h1 {
-display: flex;
-justify-content: center;
-  font-family: 'Kalam', cursive;
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 3px;
-  flex: 1;
-  max-width: 30vw;
-
-}
 
 button {
   background-color: #323232;
@@ -31,9 +40,9 @@ button {
   color: white;
   font-size: 10px;
   font-weight: bold;
-  margin: 0 20px;
+  /* margin: 0 20px;
   margin-bottom: 10px;
-  /* padding: 10px 20px; */
+  padding: 10px 20px; */
   
 }
 .home-nav-login {
@@ -42,6 +51,7 @@ button {
   border-radius: 20px;
   color: white;
   display: flex;
+  justify-content: flex-end;
   font-size: 20px;
   font-weight: bold;
 
@@ -54,5 +64,18 @@ button {
   display: flex;
   font-size: 20px;
   font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
 } 
 
+
+.logout {
+  background-color: #323232;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* display: flex;
+  justify-content: flex-end; */
+
+}

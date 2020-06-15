@@ -59,7 +59,7 @@ export default class EditRestaurant extends Component {
         })
       }}>
    
-        <h3>Edit restaurant here...</h3>
+        <h3 className="edit-rest-title">Edit restaurant here...</h3>
         <label htmlFor="name">Name:
         <input className="edit-form-name"
           id="name"
@@ -87,7 +87,7 @@ export default class EditRestaurant extends Component {
           onChange={this.handleChange}
         />
         </label>
-        <button>Submit</button>
+        <button className="edit-rest-submit">Submit</button>
       </form>
     )
   }
