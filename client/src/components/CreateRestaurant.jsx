@@ -30,7 +30,7 @@ export default class CreateRestaurant extends Component {
                     description: ""
                 })
             }}>
-                <h3>Create Restaurant</h3>
+                <h3 className="create-restaurant-title">Create Restaurant</h3>
                 <label htmlFor="name">Restaurant Name:
                 <input className="create-name"
                 id="name"
@@ -62,7 +62,7 @@ export default class CreateRestaurant extends Component {
              /> 
             </label>
             
-                <button>Submit</button>
+                <button className="create-rest-submit">Submit</button>
             </form>
         )
     }
