@@ -1,4 +1,4 @@
-.register-form {
+.create-rest-form {
   margin: 10px auto;
   width: 19em;
   text-align: center;
@@ -12,7 +12,7 @@
 }
 
 
-.reg-username, .reg-email, .reg-password {
+.create-name, .create-location, .create-description {
   color: #444;
   font-size: 1.5em;
   outline: none; 

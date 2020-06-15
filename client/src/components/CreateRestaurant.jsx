@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CreateRestaurant.css'
 
 export default class CreateRestaurant extends Component {
     state={
@@ -19,7 +20,7 @@ export default class CreateRestaurant extends Component {
         const { name, location, imgURL, description } = this.state;
         const { postRestaurant, history } = this.props
         return (
-            <form onSubmit={(e) => {
+            <form className="create-rest-form" onSubmit={(e) => {
                 e.preventDefault();
                 postRestaurant(this.state);
                 history.push('/restaurants');
@@ -31,7 +32,7 @@ export default class CreateRestaurant extends Component {
             }}>
                 <h3>Create Restaurant</h3>
                 <label htmlFor="name">Restaurant Name:
-                <input 
+                <input className="create-name"
                 id="name"
                 type="text" 
                 name="name"
@@ -41,7 +42,7 @@ export default class CreateRestaurant extends Component {
             </label>
             <br />
                 <label htmlFor="location">Location:
-                <input 
+                <input className="create-location"
                 id="location"
                 type="text" 
                 name="location"
@@ -52,7 +53,7 @@ export default class CreateRestaurant extends Component {
             <br />
             
                 <label htmlFor="description">Description:
-                <input
+                <input className="create-description"
                 id="description" 
                 type="text" 
                 name="description"
