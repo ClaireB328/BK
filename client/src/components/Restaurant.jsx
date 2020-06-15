@@ -7,12 +7,14 @@ import './Restaurant.css'
 
 export default class Restaurant extends Component {
     state = {
-        isEdit: false
+        isEdit: false,
+        // isReview: false
     }
 
     resetEdit = () => {
         this.setState({ isEdit: false })
     }
+
 
     render() {
         const { restaurant, currentUser, destroyRestaurant } = this.props
@@ -33,6 +35,7 @@ export default class Restaurant extends Component {
                                     <>
                                         <button onClick={() => this.setState({ isEdit: true })}>Edit</button>
                                         <button onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
+                                        {/* <button onClick={() => this.setState({ isReview: true})}>Review</button> */}
                                     </>
                                 )
                             }
@@ -53,7 +56,7 @@ export default class Restaurant extends Component {
                         />
                     </>
                 }
-                <Link><button>REVIEW</button></Link>
+              
             </>
         )
     }

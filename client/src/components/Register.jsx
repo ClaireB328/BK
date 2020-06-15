@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import './Register.css'
 
 export default class Register extends Component {
     state = {
@@ -20,7 +21,7 @@ export default class Register extends Component {
         const { username, email, password } = this.state;
         const { handleRegisterSubmit, history } = this.props;
         return (
-            <form onSubmit={(e) => {
+            <form className="register-form" onSubmit={(e) => {
                 e.preventDefault();
                 handleRegisterSubmit(this.state);
                 history.push('/');
@@ -33,7 +34,7 @@ export default class Register extends Component {
             }}>
                 <h3>Register</h3>
                 <label htmlFor="username">username:
-              <input 
+              <input className="reg-username"
               id="username"
               type="text" 
               name="username" 
@@ -43,7 +44,7 @@ export default class Register extends Component {
             </label>
             <br />
             <label htmlFor="email">email:
-              <input 
+              <input className="reg-email"
               id="email"
               type="text" 
               name="email" 
@@ -54,7 +55,7 @@ export default class Register extends Component {
             <br />
 
             <label htmlFor="password">password:
-            <input
+            <input className="reg-password"
               id="password"
               type="password" 
               name="password" 
