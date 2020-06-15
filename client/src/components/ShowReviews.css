@@ -1,9 +1,9 @@
 .submitted-reviews {
-
-  box-shadow: 5px 5px 5px 5px red;
   padding-bottom: 100px;
+ padding-left: 30px;
 }
 
 .submitted-reviews h3{
   text-decoration: underline;
+  padding-left: 30px;
 }

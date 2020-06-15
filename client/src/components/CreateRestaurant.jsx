@@ -23,7 +23,7 @@ export default class CreateRestaurant extends Component {
             <form className="create-rest-form" onSubmit={(e) => {
                 e.preventDefault();
                 postRestaurant(this.state);
-                history.push('/restaurants');
+                history.push('/');
                 this.setState({
                     name: "",
                     location: "",

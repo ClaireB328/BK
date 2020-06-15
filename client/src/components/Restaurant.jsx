@@ -21,35 +21,9 @@ export default class Restaurant extends Component {
         return (
             <>
                 {restaurant &&
-                    <>
+                    <div className="restaurant-container">
 
-                        <React.Fragment>
-                            <div className="one-rest">
-                                <h1 className="one-rest-name">{restaurant.name}</h1>
-                            
-                                <h2 className="one-rest-location">{restaurant.location}</h2>
-                                <img className="single-image" src={restaurant.imgURL} /> 
-                                <h3 className="one-rest-description">{restaurant.description}</h3>
-                            </div>
-
-                            {
-                                currentUser && currentUser.id === restaurant.user_id && (
-                                    <>
-                                        <button className="rest-edit-button" onClick={() => this.setState({ isEdit: true })}>Edit</button>
-                                        <button className="rest-delete-button" onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
-                                        {/* <button onClick={() => this.setState({ isReview: true})}>Review</button> */}
-                                    </>
-                                )
-                            }
-
-                        </React.Fragment>
-                        {this.state.isEdit &&
-                            <EditRestaurant
-                                {...this.props}
-                                resetEdit={this.resetEdit}
-                            />
-
-                        }
+                        <div className="review-container">
                         <CreateReview 
                         {...this.props}
                         restaurantId = {restaurant.id} 
@@ -57,7 +31,36 @@ export default class Restaurant extends Component {
                         <ShowReviews 
                         reviews = {restaurant.reviews}
                         />
-                    </>
+                         {
+                                currentUser && currentUser.id === restaurant.user_id && (
+                                    <div className="edit-delete">
+                                        <button className="rest-edit-button" onClick={() => this.setState({ isEdit: true })}>Edit</button>
+                                        <button className="rest-delete-button" onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
+                                        {/* <button onClick={() => this.setState({ isReview: true})}>Review</button> */}
+                                    </div>
+                                )
+                            }
+                        </div>
+
+                        <>
+                            <div className="one-rest">
+                                <h1 className="one-rest-name">{restaurant.name}</h1>
+                            
+                                <h2 className="one-rest-location">{restaurant.location}</h2>
+                                <img className="single-image" src={restaurant.imgURL} /> 
+                                <h3 className="one-rest-description">{restaurant.description}</h3>
+                            </div>  
+                        </>
+
+                        {this.state.isEdit &&
+                            <EditRestaurant
+                                {...this.props}
+                                resetEdit={this.resetEdit}
+                            />
+
+                        }
+                    
+                    </div>
                 }
               
             </>

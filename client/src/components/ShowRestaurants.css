@@ -6,14 +6,21 @@
   font-size: 15px; 
 }
 
-.all-restaurants {
+.app-description{
+  font-family: 'Kalam', cursive;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.rest-list {
   width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 40px;
- 
 }
+
+
  
 
 .restaurants {

@@ -1,5 +1,8 @@
+
+
 .create-review-form {
-  margin: 10px auto;
+  
+  margin: 10px 0;
   width: 20em;
   position: relative;
   -webkit-animation: moveDown .3s;
@@ -8,7 +11,10 @@
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  padding-bottom: 70px;  
+  padding-bottom: 70px; 
+  padding-left: 10%; 
+
+  
 }
 
 .review-input{
@@ -25,15 +31,16 @@
   border-color: #bbb;
   background: transparent;
   display: block;
-  height: 2em;
-  width: 12em;
+  height: 1em;
+  width: 8em;
   margin-bottom: 5%;
-  padding: 0 3%;
+  padding: 0 5%;
   position: relative;
   z-index: 0;
   -webkit-transition: border .25s; 
   -moz-transition: border .25s;
   -o-transition: border .25s;
   transition: border .25s;
+  
  
 }

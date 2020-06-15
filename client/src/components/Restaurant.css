@@ -1,9 +1,20 @@
-.rest-edit-button {
+.edit-delete {
   display: flex;
   justify-content: flex-end;
-;
 
 }
+
+.restaurant-container {
+ display: flex;
+}
+
+.review-container {
+display: flex;
+flex-direction: column;
+width: 200px;
+}
+
+
 .one-rest {
   box-shadow: 0px 0px 3px 1px #CECECE;
   display: flex;
@@ -11,10 +22,11 @@
   flex-direction: column;
   justify-content: center;
   color: black;
-  padding: 20px 10px;
+  padding: 20px 0;
   font-size: 20px; 
   width: 500px;
-  margin: 12px auto;
+  margin: 0px auto;
+
 
 }
 
@@ -29,7 +41,7 @@
 
 .single-image {
   padding-top: 6px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   width: 500px;
   margin: 0 auto;
 

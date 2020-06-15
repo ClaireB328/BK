@@ -21,11 +21,11 @@ export default class CreateReview extends Component {
                 e.preventDefault();
                 postReview(this.state, restaurantId);
                 this.setState({
-                    text: "",
-                  
+                    text: "",   
                 })
+                
             }}>
-                <h3>Leave your review here...</h3>
+                <h3  className="leave-review">Leave your review here...</h3>
                 <label htmlFor="text">
                 <input className="review-input"
                 id="text"

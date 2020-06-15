@@ -9,6 +9,7 @@ export default function ShowRestaurants(props) {
             <Link className="create-button" to='/new/restaurant'><button>CREATE</button></Link>
            <h2 className="app-description">Please select a restaurant and leave a review</h2>
            
+            <div className="rest-list">
             {
                 restaurants.map(restaurant => (
                     <React.Fragment key={restaurant.id}>
@@ -27,7 +28,7 @@ export default function ShowRestaurants(props) {
                 ))
             }
           
-        
+        </div>
         </>
     )
 }
