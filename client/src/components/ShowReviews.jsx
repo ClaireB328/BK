@@ -5,7 +5,7 @@ export default function ShowReviews(props) {
     const {reviews} = props;
     return (
         <div className="submitted-reviews">
-            <h3>Reviews</h3>
+            <h3>Your Reviews</h3>
             {
                 reviews.map(review => (
                     <p key={review.id}>{review.text}</p>

@@ -7,6 +7,8 @@ export default function ShowRestaurants(props) {
     return (
         <>
             <Link className="create-button" to='/new/restaurant'><button>CREATE</button></Link>
+           <h2 className="app-description">Please select a restaurant and leave a review</h2>
+           
             {
                 restaurants.map(restaurant => (
                     <React.Fragment key={restaurant.id}>

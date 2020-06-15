@@ -24,8 +24,6 @@ export default class Restaurant extends Component {
                     <>
 
                         <React.Fragment>
-
-
                             <div className="one-rest">
                                 <h1 className="one-rest-name">{restaurant.name}</h1>
                             
@@ -43,6 +41,7 @@ export default class Restaurant extends Component {
                                     </>
                                 )
                             }
+
                         </React.Fragment>
                         {this.state.isEdit &&
                             <EditRestaurant
