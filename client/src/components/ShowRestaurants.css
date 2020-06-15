@@ -1,15 +1,14 @@
 .all-restaurants {
-  width: 50vw;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  box-shadow: 1px 1px 3px 1px red;
-
+  padding: 40px;
+ 
 }
-
+ 
 
 .restaurants {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +18,11 @@
   padding: 20px;
   margin-bottom: 60px;
 
+}
+
+.restaurants:hover {
+  transform: scale(1.02);
+  opacity: .9;
 }
 
 .rest-name {
@@ -31,7 +35,8 @@ font-size: 30px;
 
 
 .restaurant-image {
-  width: 400px;
+  /* width: 400px; */
+  max-width: 500px;
   
 }
 

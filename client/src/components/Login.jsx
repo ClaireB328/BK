@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import './Login.css'
 
 export default class Login extends Component {
     state = {
@@ -19,7 +20,8 @@ export default class Login extends Component {
         const { username, password } = this.state;
         const { handleLoginSubmit, history } = this.props;
         return (
-            <form onSubmit={(e) => {
+            <form className="login-form" 
+                onSubmit={(e) => {
                 e.preventDefault();
                 handleLoginSubmit(this.state);
                 history.push('/');

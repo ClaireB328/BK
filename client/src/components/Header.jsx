@@ -17,7 +17,7 @@ export default function Header(props) {
             }
 
             <Link className="register" to='/user/register'><button>Register</button></Link>
-            <hr />
+           
         </nav>
     )
 }
