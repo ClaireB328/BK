@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './EditRestaurant.css'
 
 export default class EditRestaurant extends Component {
   state = {
@@ -47,7 +48,7 @@ export default class EditRestaurant extends Component {
     const { name, location, imgURL, description } = this.state;
     const { putRestaurant, restaurant } = this.props;
     return (
-      <form onSubmit={(e) => {
+      <form className="edit-form" onSubmit={(e) => {
         e.preventDefault();
         putRestaurant(restaurant.id, this.state);
         this.props.resetEdit();
@@ -57,10 +58,10 @@ export default class EditRestaurant extends Component {
           description: ""
         })
       }}>
-        <hr />
-        <h3>Edit Restaurant</h3>
+   
+        <h3>Edit restaurant here...</h3>
         <label htmlFor="name">Name:
-        <input
+        <input className="edit-form-name"
           id="name"
           type="text"
           name="name"
@@ -69,7 +70,7 @@ export default class EditRestaurant extends Component {
         />
         </label>
          <label htmlFor="location">Location:
-        <input
+        <input className="edit-form-location"
           id="location"
           type="text"
           name="location"
@@ -78,7 +79,7 @@ export default class EditRestaurant extends Component {
         />
         </label>
          <label htmlFor="description">Description:
-        <input
+        <input className="edit-form-description"
           id="description"
           type="text"
           name="description"

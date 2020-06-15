@@ -29,32 +29,30 @@ button {
   background-color: #323232;
   border-radius: 20px;
   color: white;
-  display: flex;
-  justify-content: flex-end;
   font-size: 10px;
   font-weight: bold;
   margin: 0 20px;
   margin-bottom: 10px;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
+  
 }
-/* .login {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-right: 20px;
-
+.home-nav-login {
+ 
   background-color: #323232;
   border-radius: 20px;
   color: white;
   display: flex;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0 20px;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-} */
 
-/* .register {
+} 
+
+.home-nav-register {
+  background-color: #323232;
+  border-radius: 20px;
+  color: white;
   display: flex;
-  justify-content: flex-end;
-} */
+  font-size: 20px;
+  font-weight: bold;
+} 
+

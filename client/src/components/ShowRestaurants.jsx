@@ -6,7 +6,7 @@ export default function ShowRestaurants(props) {
     const { restaurants } = props;
     return (
         <>
-            
+            <Link className="create-button" to='/new/restaurant'><button>CREATE</button></Link>
             {
                 restaurants.map(restaurant => (
                     <React.Fragment key={restaurant.id}>
@@ -25,7 +25,7 @@ export default function ShowRestaurants(props) {
                 ))
             }
           
-        <Link to='/new/restaurant'><button>CREATE</button></Link>
+        
         </>
     )
 }

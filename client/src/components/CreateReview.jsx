@@ -24,9 +24,9 @@ export default class CreateReview extends Component {
                   
                 })
             }}>
-                <h3>Create Review</h3>
+                <h3>Leave your review here...</h3>
                 <label htmlFor="text">Review:
-                <input 
+                <input className="review-input"
                 id="text"
                 type="text" 
                 name="text"

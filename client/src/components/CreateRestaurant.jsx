@@ -50,13 +50,7 @@ export default class CreateRestaurant extends Component {
              /> 
             </label>
             <br />
-                {/* <label htmlFor="name">Restaurant Name:
-                <input 
-                type="text" 
-                value={name}
-                onChange={this.handleChange}
-             /> 
-            </label> */}
+            
                 <label htmlFor="description">Description:
                 <input
                 id="description" 
@@ -66,7 +60,7 @@ export default class CreateRestaurant extends Component {
                 onChange={this.handleChange}
              /> 
             </label>
-            <br />
+            
                 <button>Submit</button>
             </form>
         )
