@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const baseUrl = process.env.NODE_ENV === 'production' 
-? 'https://brooklyn-restaurateur-review-api.herokuapp.com'
-:'http://localhost:3000'
+? 'https://brooklyn-restaurateur-review.herokuapp.com/'
+: 'http://localhost:3000'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -11,3 +11,4 @@ const api = axios.create({
 export default api;
 
 
+// ? 'https://brooklyn-restaurateur-review-api.herokuapp.com'
