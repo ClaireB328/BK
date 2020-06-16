@@ -18,7 +18,7 @@ export default class Restaurant extends Component {
     render() {
         const { restaurant, currentUser, destroyRestaurant } = this.props
         return (
-            <>
+            <div className="main-rest-page">
                 {restaurant &&
                     <div className="restaurant-container">
 
@@ -38,7 +38,7 @@ export default class Restaurant extends Component {
                                     <div className="edit-delete">
                                         <button className="rest-edit-button" onClick={() => this.setState({ isEdit: true })}>Edit</button>
                                         <button className="rest-delete-button" onClick={() => destroyRestaurant(restaurant.id)}>Delete</button>
-                                        {/* <button onClick={() => this.setState({ isReview: true})}>Review</button> */}
+                                    
                                     </div>
                                 )
                             }
@@ -62,7 +62,7 @@ export default class Restaurant extends Component {
                     </div>
                 }
               
-            </>
+            </div>
         )
     }
 }

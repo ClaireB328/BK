@@ -1,3 +1,5 @@
+
+
 .edit-delete {
   display: flex;
   justify-content: flex-end;
@@ -18,8 +20,8 @@
 
 .restaurant-container {
  display: flex;
- background-color: #e7eff9;
- background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+
+ 
 }
 
 .review-container {
@@ -30,7 +32,8 @@ width: 200px;
 
 
 .one-rest {
-  box-shadow: 0px 0px 3px 1px #CECECE;
+  box-shadow: 3px 3px 3px 3px #CECECE;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -42,18 +45,18 @@ width: 200px;
 }
 
 .one-rest-name{
-  font-size: 25px;
+  font-size: 15px;
 }
 
 
 .one-rest-location {
-  font-size: 25px;
+  font-size: 15px;
 }
 
 .single-image {
   padding-top: 6px;
   padding-bottom: 30px;
-  width: 475px;
+  width: 275px;
   margin: 0 auto;
 
 }
@@ -63,4 +66,71 @@ width: 200px;
   width: 500px;
   margin: 0 auto;
   text-align: center;
+  font-size: 20px;
 }
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+
+    
+    .restaurant-container {
+    display: flex;
+    justify-content: column;
+    flex-direction: column;
+    margin-right: 150px;
+    margin-top: 20px;
+     
+    }
+    
+    .review-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+    }
+    
+    
+    .one-rest {
+      box-shadow: 3px 3px 3px 3px #CECECE;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: black;
+      font-size: 20px; 
+      width: 355px;
+      margin: 10px;
+      margin-right: 5px;
+    }
+    
+    .one-rest-name{
+      font-size: 15px;
+    }
+    
+    .one-rest-location {
+      font-size: 15px;
+    }
+    
+    .single-image {
+      padding-top: 6px;
+      padding-bottom: 30px;
+      width: 275px;
+      margin: 0 auto;
+    
+    }
+    
+    .one-rest-description {
+      display: flex;
+      width: 500px;
+      margin-left: 50%;
+      margin-right: 50%;
+      text-align: center;
+      font-size: 15px;
+    }
+
+  }

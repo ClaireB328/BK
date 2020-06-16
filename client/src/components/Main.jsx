@@ -40,9 +40,6 @@ postRestaurant = async (restaurantData) => {
       }))
 }
 
-  // Our putFood method should follow a similar pattern that we're used to.
-  // improt notes: we need an id and formData for our api call
-  // For the setState, I referenced the frontend-CRUD-design lesson
   putRestaurant = async (id, restaurantData) => {
     const updatedRestaurant = await updateRestaurant(id, restaurantData);
     this.setState(prevState => ({

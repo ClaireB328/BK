@@ -15,13 +15,13 @@ export default function ShowRestaurants(props) {
                     <React.Fragment key={restaurant.id}>
 
                     <div className="all-restaurants"> 
-                        {/* {restaurant.id}  */}
+                    
                         <Link className="restaurants" to={`/restaurants/${restaurant.id}`}>
                         <div className="rest-name">{restaurant.name}</div>
                         <div className="rest-loc">{restaurant.location} </div>
                         <img className="restaurant-image" src={restaurant.imgURL} alt="restaurant" /> 
                         </Link>
-                        {/* <div className="rest-description">{restaurant.description}</div> */}
+                    
                     </div>
                     </React.Fragment>
                     
