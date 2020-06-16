@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import {Route} from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
-import { getAllReviews, createReview } from '../services/reviews'
+import { createReview } from '../services/reviews'
 import { getAllRestaurants, createRestaurant, deleteRestaurant, updateRestaurant } from '../services/restaurants'
-import ShowReviews from './ShowReviews'
 import ShowRestaurants from './ShowRestaurants'
 import CreateRestaurant from './CreateRestaurant'
 import Restaurant from './Restaurant'
-import CreateReview from './CreateReview'
-import EditRestaurant from './EditRestaurant'
+
 
 export default class Main extends Component {
 state = {

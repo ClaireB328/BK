@@ -19,7 +19,7 @@ export default function ShowRestaurants(props) {
                         <Link className="restaurants" to={`/restaurants/${restaurant.id}`}>
                         <div className="rest-name">{restaurant.name}</div>
                         <div className="rest-loc">{restaurant.location} </div>
-                        <img className="restaurant-image" src={restaurant.imgURL} /> 
+                        <img className="restaurant-image" src={restaurant.imgURL} alt="restaurant.image" /> 
                         </Link>
                         {/* <div className="rest-description">{restaurant.description}</div> */}
                     </div>

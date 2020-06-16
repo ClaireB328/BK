@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import EditRestaurant from './EditRestaurant'
 import ShowReviews from './ShowReviews'
 import CreateReview from './CreateReview'
@@ -47,7 +46,7 @@ export default class Restaurant extends Component {
                                 <h1 className="one-rest-name">{restaurant.name}</h1>
                             
                                 <h2 className="one-rest-location">{restaurant.location}</h2>
-                                <img className="single-image" src={restaurant.imgURL} /> 
+                                <img className="single-image" src={restaurant.imgURL} alt="restaurant.image"/> 
                                 <h3 className="one-rest-description">{restaurant.description}</h3>
                             </div>  
                         </>

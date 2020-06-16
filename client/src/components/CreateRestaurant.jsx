@@ -17,7 +17,7 @@ export default class CreateRestaurant extends Component {
     }
 
     render() {
-        const { name, location, imgURL, description } = this.state;
+        const { name, location, description } = this.state;
         const { postRestaurant, history } = this.props
         return (
             <form className="create-rest-form" onSubmit={(e) => {

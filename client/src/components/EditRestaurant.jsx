@@ -45,7 +45,7 @@ export default class EditRestaurant extends Component {
   }
 
   render() {
-    const { name, location, imgURL, description } = this.state;
+    const { name, location, description } = this.state;
     const { putRestaurant, restaurant } = this.props;
     return (
       <form className="edit-form" onSubmit={(e) => {
