@@ -30,6 +30,9 @@ export default class Restaurant extends Component {
                         <ShowReviews 
                         reviews = {restaurant.reviews}
                         />
+                        </div>
+
+                        <div className="single-rest">
                          {
                                 currentUser && currentUser.id === restaurant.user_id && (
                                     <div className="edit-delete">
@@ -39,9 +42,6 @@ export default class Restaurant extends Component {
                                     </div>
                                 )
                             }
-                        </div>
-
-                        <>
                             <div className="one-rest">
                                 <h1 className="one-rest-name">{restaurant.name}</h1>
                             
@@ -49,7 +49,7 @@ export default class Restaurant extends Component {
                                 <img className="single-image" src={restaurant.imgURL} alt="restaurant"/> 
                                 <h3 className="one-rest-description">{restaurant.description}</h3>
                             </div>  
-                        </>
+                        </div>
 
                         {this.state.isEdit &&
                             <EditRestaurant

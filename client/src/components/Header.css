@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: #e63946;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   
 }
 
@@ -15,18 +16,25 @@ a h1 {
   flex: 1;
   max-width: 40vw;
   color: white;
+  
 }
 
+span {
+  color: white;
+  padding-top: 3px;
+  padding-right: 10px;
+}
 
 .nav {
   width: 100%;
   text-align: center;
-  background-color: #e63946;
   display: flex;
   justify-content: flex-end;
   height: 30px;
   padding-bottom: 5px;
   box-shadow: 0px 3px 0px 0px #CECECE;
+  background-color: #000000;
+background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 }
 
 a {
@@ -40,30 +48,32 @@ button {
   color: white;
   font-size: 10px;
   font-weight: bold;
-
-  
 }
+
 .home-nav-login {
- 
   background-color: #323232;
   border-radius: 20px;
   color: white;
   display: flex;
   justify-content: flex-end;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
-
 } 
+
+logout {
+  font-size: 15px;
+}
 
 .home-nav-register {
   background-color: #323232;
   border-radius: 20px;
   color: white;
   display: flex;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   display: flex;
   justify-content: flex-end;
+  padding-right: 10px;
 } 
 
 

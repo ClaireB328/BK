@@ -1,3 +1,9 @@
+.main-page {
+  background-color: #e7eff9;
+background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+
+}
+
 .create-button {
   display: flex;
   justify-content: flex-end;
@@ -10,18 +16,17 @@
   font-family: 'Kalam', cursive;
   font-size: 20px;
   padding-left: 20px;
+
 }
 
 .rest-list {
-  width: 90vw;
+  width: 98vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 40px;
+ 
 }
 
-
- 
 
 .restaurants {
   display: flex;
@@ -32,6 +37,8 @@
   transition: 250ms all;
   padding: 20px;
   margin-bottom: 60px;
+  color: black;
+
 
 }
 
